@@ -1,7 +1,6 @@
 @import 'config';
 @import 'menu';
-@import 'mobile';
-
+ 
 
 *{
     box-sizing: border-box;
@@ -13,6 +12,9 @@ body{
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5;
+    &#about{
+      background: linear-gradient(30deg, $primary-color 80%,lighten($primary-color, 10) 50%);
+    }
 }
 
 //Heading
@@ -22,10 +24,14 @@ h1, h2 ,h3 {
 
     &.lg-heading {
         font-size: 6rem;
+        line-height: 1;
+
     }
     &.sm-heading {
         margin-bottom: 2rem;
         padding: 0.2rem 1rem;
+        line-height: 3;
+
        // background: rgba(lighten($primary-color, 2), 0.5);
 
         }
@@ -42,6 +48,7 @@ header{
 
 .text-secondary{
     color: #eece1a;
+
     &:hover {
         color: red;
         @include easeOut();
@@ -50,19 +57,23 @@ header{
 
 main {
     padding: 4rem;
-    height: 100%;
+    min-height: calc(100vh - 3em);
 
-    .icon {
+    .icons {
         margin-top: 1rem;
 
         a{
         padding: 0.4rem;
 
         &:hover {
-            color: red;
+            color: $secondary-color;
             @include easeOut();
         }
         }
+    }
+    .icons, .sm-heading, .text-secondary {
+        margin-left: 6rem; 
+
     }
     &#home {
         overflow: hidden;
@@ -71,3 +82,58 @@ main {
         }
     }
 }
+
+.wraper{
+    max-width: 250px;
+    height: auto;
+    grid-area: wraper;
+    margin: auto;
+    
+    & > img {
+        width: 100%; 
+        height: auto;   
+        border-radius: 50%;
+        border: 3px solid $secondary-color;
+     
+    }
+}
+
+.about-section {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-areas: 
+    'wraper bio bio'
+    'job-1 job-2 job-3';  
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.bio{
+    grid-area: bio;
+    & > h3{
+        color: $secondary-color;
+    }
+}
+.job{
+    background: lighten($primary-color, 6);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 6px solid;
+}
+.job-1 {
+    grid-area: job1;
+}
+.job-2 {
+    grid-area: job2;
+}
+.job-3 {
+    grid-area: job3;
+}
+
+footer{ 
+    text-align: center;
+    padding: 1rem;
+    background: darken($primary-color, 6);
+    color: #fff;
+    height: 3em;  
+}
+
+@import 'mobile'; 

@@ -1,8 +1,8 @@
 $primary-color: rgb(58, 55, 55);
 $secondary-color: #eece1a;
 $show-home-image: true;
-$home-image: url( ../img/adventure-asia-backlit-417059.jpg);
-$background-opacity: 0.6; 
+$home-image: url( ../img/pexels-photo-305086.jpeg); 
+$background-opacity: 0.9; 
 
 @mixin easeOut {
     transition: all 1s ease-out;

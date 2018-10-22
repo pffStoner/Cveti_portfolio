@@ -77,12 +77,14 @@
         .portrait {
             width: 16rem;
             height: 16rem;
-            background: url('../img/cveti.jpg');
+            background: url('https://scontent.fsof3-1.fna.fbcdn.net/v/t1.0-9/18700323_1449985171738797_2904192027123897684_n.jpg?_nc_cat=111&_nc_ht=scontent.fsof3-1.fna&oh=09ec49588037ec88cb85aace81449039&oe=5C89F949');
             background-size: contain;
             background-position: center;
             border-radius: 50%;
-            border: 3px solid $secondary-color; 
             background-repeat: no-repeat; 
+            filter: grayscale(100%);
+            border: 3px solid $secondary-color; 
+
         }
     }
 
