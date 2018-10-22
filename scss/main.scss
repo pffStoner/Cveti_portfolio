@@ -1,6 +1,7 @@
 @import 'config';
 @import 'menu';
- 
+@import 'mobile'; 
+
 
 *{
     box-sizing: border-box;
@@ -127,7 +128,50 @@ main {
 .job-3 {
     grid-area: job3;
 }
+.work-section{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2em;
 
+
+    img{
+        width: 100%;
+        border: 3px #fff solid;
+    }
+    img:hover{
+        opacity: 0.6;
+        border-color: $secondary-color;
+        @include easeOut;
+        cursor: pointer;
+    }
+
+}
+
+//button styles
+.btn{
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+    text-align: center;     
+  
+}
+.btn-dark{
+    @extend .btn;
+    background: darken($primary-color, 66);
+    color: #fff;
+    &:hover{
+        background: darken($primary-color, 10);
+    }
+}
+.btn-light{
+    @extend .btn;
+    background: lighten($secondary-color, 66);
+    color: #333;
+    &:hover{
+        background: lighten($secondary-color, 18);     
+    } 
+}
 footer{ 
     text-align: center;
     padding: 1rem;

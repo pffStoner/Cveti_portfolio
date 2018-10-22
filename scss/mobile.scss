@@ -1,12 +1,18 @@
 @include mediaXL {
-
+    .work-section{
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1em;     
+    }
 }
 
 @include mediaLG {
     
+
+    
 }
 
 @include mediaMD {
+ 
     main {
         align-items: center;
         text-align: center;
@@ -50,10 +56,18 @@
         'job3';
         grid-template-columns: 1fr;
     }
+    .work-section{
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 2em;
+    }
 }
 
 @include mediaSM {
     main#home h1{
         margin-top: 10vh;
     }
+    .work-section{
+        grid-template-columns: 1fr;
+    }
+    
 }
